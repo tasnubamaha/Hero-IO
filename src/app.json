@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/apps/whatsapp.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
     "title": "WhatsApp",
     "companyName": "Meta",
     "description": "Free messaging and video calling app used worldwide.",
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "image": "/apps/facebook.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
     "title": "Facebook",
     "companyName": "Meta",
     "description": "Social media platform to connect with friends and family.",
@@ -37,7 +37,7 @@
   },
   {
     "id": 3,
-    "image": "/apps/instagram.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
     "title": "Instagram",
     "companyName": "Meta",
     "description": "Photo and video sharing social networking service.",
@@ -55,7 +55,7 @@
   },
   {
     "id": 4,
-    "image": "/apps/youtube.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/YouTube_social_white_circle_%282017%29.svg/640px-YouTube_social_white_circle_%282017%29.svg.png",
     "title": "YouTube",
     "companyName": "Google",
     "description": "Watch and share videos from creators worldwide.",
@@ -73,7 +73,7 @@
   },
   {
     "id": 5,
-    "image": "/apps/tiktok.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/640px-Tiktok_icon.svg.png",
     "title": "TikTok",
     "companyName": "ByteDance",
     "description": "Short-form mobile video platform.",
@@ -91,7 +91,7 @@
   },
   {
     "id": 6,
-    "image": "/apps/twitter.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Coast_twitter.png/640px-Coast_twitter.png",
     "title": "Twitter",
     "companyName": "X Corp",
     "description": "Platform for real-time news and conversations.",
@@ -109,7 +109,7 @@
   },
   {
     "id": 7,
-    "image": "/apps/netflix.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Netflix-icon.png/640px-Netflix-icon.png",
     "title": "Netflix",
     "companyName": "Netflix Inc.",
     "description": "Watch movies, TV shows, and original series.",
@@ -127,7 +127,7 @@
   },
   {
     "id": 8,
-    "image": "/apps/spotify.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
     "title": "Spotify",
     "companyName": "Spotify Ltd.",
     "description": "Stream millions of songs and podcasts.",
@@ -145,7 +145,7 @@
   },
   {
     "id": 9,
-    "image": "/apps/telegram.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
     "title": "Telegram",
     "companyName": "Telegram FZ LLC",
     "description": "Fast and secure messaging application.",
@@ -163,7 +163,7 @@
   },
   {
     "id": 10,
-    "image": "/apps/snapchat.png",
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg",
     "title": "Snapchat",
     "companyName": "Snap Inc.",
     "description": "Share moments with photos and videos.",
@@ -181,7 +181,7 @@
   },
   {
     "id": 11,
-    "image": "/apps/zoom.png",
+    "image": "https://lthub.ubc.ca/files/2021/07/zoom-logo.png",
     "title": "Zoom",
     "companyName": "Zoom Video",
     "description": "Video meetings and online conferencing.",
@@ -199,7 +199,7 @@
   },
   {
     "id": 12,
-    "image": "/apps/googlemaps.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Google_Maps_icon_%282015-2020%29.svg/640px-Google_Maps_icon_%282015-2020%29.svg.png",
     "title": "Google Maps",
     "companyName": "Google",
     "description": "Navigation and real-time GPS mapping service.",
@@ -217,7 +217,7 @@
   },
   {
     "id": 13,
-    "image": "/apps/uber.png",
+    "image": "https://grapheine.com/wp-content/uploads/2018/10/uber-logo-2560x1576.webp",
     "title": "Uber",
     "companyName": "Uber Technologies",
     "description": "Ride-sharing and transportation service.",
@@ -235,7 +235,7 @@
   },
   {
     "id": 14,
-    "image": "/apps/foodpanda.png",
+    "image": "https://cdn.aptoide.com/imgs/1/8/e/18e6fd961faaed74e8afd21452635ca8_icon.png",
     "title": "Foodpanda",
     "companyName": "Delivery Hero",
     "description": "Order food and groceries online.",
@@ -253,7 +253,7 @@
   },
   {
     "id": 15,
-    "image": "/apps/duolingo.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsxXwd8z5TFGvKHfCCQGsptm3ZeyhdRbMRJQ&s",
     "title": "Duolingo",
     "companyName": "Duolingo Inc.",
     "description": "Learn languages with fun lessons.",
@@ -271,7 +271,7 @@
   },
   {
     "id": 16,
-    "image": "/apps/capcut.png",
+    "image": "https://play-lh.googleusercontent.com/M78HyakHaxKrjoeqYx41E9DXfVYYtx67nvc7Ks4G4zFQeaAJdGCi8gzzGSrHIwlrmnJS6zD9S4fAXqdEwfuHQAQ=w240-h480-rw",
     "title": "CapCut",
     "companyName": "ByteDance",
     "description": "Video editing app for creators.",
@@ -289,7 +289,7 @@
   },
   {
     "id": 17,
-    "image": "/apps/canva.png",
+    "image": "https://play-lh.googleusercontent.com/JC3HW-ps59VAEU3vuJoi3I5XB_IQ9ISuILLudUY9uLSW7eKfqtXitrB-fF865rV4TQ",
     "title": "Canva",
     "companyName": "Canva Pty Ltd.",
     "description": "Graphic design and social media content creation.",
@@ -307,7 +307,7 @@
   },
   {
     "id": 18,
-    "image": "/apps/googlephotos.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe-oPC9l3I6fytA9mhm0HehRiMfwAu-4lxXg&s",
     "title": "Google Photos",
     "companyName": "Google",
     "description": "Backup and organize your photos securely.",
@@ -325,7 +325,7 @@
   },
   {
     "id": 19,
-    "image": "/apps/pinterest.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png",
     "title": "Pinterest",
     "companyName": "Pinterest Inc.",
     "description": "Discover creative ideas and inspiration.",
@@ -343,7 +343,7 @@
   },
   {
     "id": 20,
-    "image": "/apps/discord.png",
+    "image": "https://play-lh.googleusercontent.com/0oO5sAneb9lJP6l8c6DH4aj6f85qNpplQVHmPmbbBxAukDnlO7DarDW0b-kEIHa8SQ",
     "title": "Discord",
     "companyName": "Discord Inc.",
     "description": "Chat, voice and video communication for communities.",

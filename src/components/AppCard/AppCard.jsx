@@ -1,36 +1,47 @@
 import { Link } from "react-router-dom";
 
 const AppCard = ({ app }) => {
-  return (
-    <Link to={`/app/${app.id}`}>
-      <div className="border rounded-xl p-4 hover:shadow-lg transition duration-300">
 
-        <img
+  // format downloads (5B, 2M etc.)
+  const formatDownloads = (num) => {
+    if (num >= 1000000000) return (num / 1000000000).toFixed(1) + "B";
+    if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+    if (num >= 1000) return (num / 1000).toFixed(1) + "K";
+    return num;
+  };
+
+  return (
+    <Link to={`/apps/${app.id}`}>
+      <div className="bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition w-full max-w-50">
+
+        {/* IMAGE */}
+        <div className="bg-gray-200 pt-2 pb-2">
+          <img
           src={app.image}
           alt={app.title}
-          className="w-20 h-20 mx-auto mb-4"
+          className="w-20 h-20 object-cover rounded-lg mb-3 ml-12 mt-4"
         />
+        </div>
 
-        <h3 className="text-lg font-semibold text-center">
+        {/* TITLE */}
+        <h3 className="text-sm font-semibold text-gray-800 mt-4 mb-2 truncate">
           {app.title}
         </h3>
 
-        <p className="text-center text-gray-500 text-sm">
-          {app.companyName}
-        </p>
+        {/* BOTTOM */}
+        <div className="flex justify-between items-center text-xs">
 
-        <div className="flex justify-between mt-4 text-sm text-gray-600">
+          {/* DOWNLOAD */}
+          <span className="bg-green-100 text-green-600 px-2 py-0.5 rounded">
+            {formatDownloads(app.downloads)}
+          </span>
 
-          <span>
+          {/* RATING */}
+          <span className="bg-orange-100 text-orange-500 px-2 py-0.5 rounded flex items-center gap-1">
             ⭐ {app.ratingAvg}
           </span>
 
-          <span>
-            ⬇ {app.downloads}
-          </span>
-
         </div>
-
       </div>
     </Link>
   );

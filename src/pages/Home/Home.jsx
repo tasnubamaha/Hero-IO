@@ -1,11 +1,14 @@
 import React from 'react';
 import apps from '../../app.json'
 import AppCard from '../../components/AppCard/AppCard';
+import Banner from '../../components/Banner/Banner';
+import { Link } from 'react-router';
 
 const Home = () => {
     const topApps = apps.slice(0,8);
     return (
         <div>
+            <Banner></Banner>
             <h2 className="text-2xl font-bold mb-6">Top Apps</h2>
 
       <div className="grid md:grid-cols-4 gap-6">

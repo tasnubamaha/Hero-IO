@@ -9,7 +9,7 @@ import MyInstallation from '../pages/MyInstallation/MyInstallation'
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Root,
+    element: <Root />,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
