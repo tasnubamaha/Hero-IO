@@ -5,6 +5,8 @@ import download from '../../assets/icon-downloads.png'
 import icons from '../../assets/icon-ratings.png'
 import reviews from '../../assets/icon-review.png'
 import AppNotFound from '../../pages/AppNotFound/AppNotFound'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -38,16 +40,33 @@ const AppDetails = () => {
 
 
   const handleInstall = () => {
-    if (!installed) {
-      setInstalled(true);
-      let installedApps = JSON.parse(localStorage.getItem("installed")) || [];
+  if (!installed) {
+    setInstalled(true);
+
+    let installedApps = JSON.parse(localStorage.getItem("installed")) || [];
+
+    if (!installedApps.includes(app.id)) {
       installedApps.push(app.id);
       localStorage.setItem("installed", JSON.stringify(installedApps));
-
-      // Navigate to MyInstallation page
-      navigate("/installation");
     }
-  };
+
+    toast.success(`${app.title} installed successfully!`, {
+    position: "top-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    className: "bg-white shadow-lg border-l-4 border-black-500 rounded-xl",
+    bodyClassName: "text-gray-800 font-medium",
+    icon: "🚀", 
+});
+
+    setTimeout(() => {
+  navigate("/installation");
+}, 1500);
+  }
+};
 
  
 
@@ -135,6 +154,17 @@ const AppDetails = () => {
           {app.description}
         </p>
       </div>
+    <ToastContainer
+    position="top-right"
+    autoClose={2500}
+    hideProgressBar={false}
+    newestOnTop={true}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+/>
     </div>
   );
 };

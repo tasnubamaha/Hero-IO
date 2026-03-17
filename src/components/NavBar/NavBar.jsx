@@ -46,7 +46,7 @@ const NavBar = () => {
    
         <img src={github} alt="" />
     
-        <a className="btn bg-[#6F41BE] mr-8 border-none"> <img src={github} alt="" /> Contribution</a>
+        <a href='https://github.com/tasnubamaha' className="btn bg-[#6F41BE] mr-8 border-none"> <img src={github} alt="" /> Contribution</a>
    
   </div>
 </div>
