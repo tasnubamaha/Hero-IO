@@ -1,13 +1,25 @@
 import React from 'react';
 import logo from '../../assets/logo.png'
 import github from '../../assets/Vector.png'
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     const links = <>
-     <NavLink className='m-2 text-[#6F41BE]'>Home</NavLink>
-     <NavLink className='m-2'>Apps</NavLink>
-     <NavLink className='m-2'>Installation</NavLink>
+     <NavLink className={({ isActive }) =>
+          isActive
+            ? "text-purple-600 font-bold"
+            : "text-gray-700 hover:text-[#6F41BE]"
+               }>Home</NavLink>
+     <NavLink to="/apps" className={({ isActive }) =>
+          isActive
+            ? "text-purple-600 font-bold"
+            : "text-gray-700 hover:text-purple-500"
+        }>Apps</NavLink>
+     <NavLink to="/installation" className={({ isActive }) =>
+          isActive
+            ? "text-purple-600 font-bold"
+            : "text-gray-700 hover:text-purple-500"
+        }>Installation</NavLink>
     </>
     return (
         <div className="navbar bg-white text-black shadow-sm">
@@ -23,10 +35,10 @@ const NavBar = () => {
       </ul>
     </div>
      <img className='w-15 h-15 ml-8 mt-3' src={logo} alt="" />
-     <h2 className='text-[#6F41BE] font-bold'>HERO.IO</h2>
+     <h2 className='text-[#6F41BE] font-bold mt-4'>HERO.IO</h2>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 gap-4">
      {links}
     </ul>
   </div>

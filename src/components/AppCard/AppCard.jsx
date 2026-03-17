@@ -2,17 +2,24 @@ import { Link } from "react-router-dom";
 
 const AppCard = ({ app }) => {
 
-  // format downloads (5B, 2M etc.)
-  const formatDownloads = (num) => {
-    if (num >= 1000000000) return (num / 1000000000).toFixed(1) + "B";
-    if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
-    if (num >= 1000) return (num / 1000).toFixed(1) + "K";
-    return num;
-  };
+ const formatDownloads = (num) => {
+  if (num >= 1_000_000_000) { // Billion
+    const value = num / 1_000_000_000;
+    return Number.isInteger(value) ? value + "B" : value.toFixed(1) + "B";
+  } else if (num >= 1_000_000) { // Million
+    const value = num / 1_000_000;
+    return Number.isInteger(value) ? value + "M" : value.toFixed(1) + "M";
+  } else if (num >= 1_000) { // Thousand
+    const value = num / 1_000;
+    return Number.isInteger(value) ? value + "K" : value.toFixed(1) + "K";
+  } else {
+    return num.toString();
+  }
+};
 
   return (
     <Link to={`/apps/${app.id}`}>
-      <div className="bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition w-full max-w-50">
+      <div className="bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition w-full max-w-50 ">
 
         {/* IMAGE */}
         <div className="bg-gray-200 pt-2 pb-2">

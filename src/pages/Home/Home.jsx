@@ -9,9 +9,10 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2 className="text-2xl font-bold mb-6">Top Apps</h2>
+            <h2 className="text-3xl text-black font-bold mb-6 text-center mt-8">Trending Apps</h2>
+            <p className='text-gray-600 text-center mb-8'>Explore All Trending Apps on the Market developed by us</p>
 
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-4 gap-4 px-50">
         {topApps.map(app => (
           <AppCard key={app.id} app={app}/>
         ))}

@@ -9,17 +9,17 @@ const Footer = () => {
         <footer className="footer sm:footer-horizontal bg-[#001931] text-neutral-content p-10">
  <div className='flex'>
      <div>
-    <img className='w-15 h-15' src={logo} alt="" />
+    <img className='w-15 h-15 ml-40' src={logo} alt="" />
   </div>
   <div>
-    <h2>HERO.IO</h2>
+    <h2 className='mt-6'>HERO.IO</h2>
   </div>
  </div>
  <div>
     <h4 className='mt-30'>Copyright © 2025 - All right reserved</h4>
  </div>
   <nav>
-    <h6 className="footer-title">Social</h6>
+    <h6 className="footer-title">Social Links</h6>
     <div className="grid grid-flow-col gap-4">
       <a>
         <img src={thread} alt="" />

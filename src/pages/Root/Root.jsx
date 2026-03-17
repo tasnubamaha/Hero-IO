@@ -7,7 +7,9 @@ const Root = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <Outlet></Outlet>
+            <main className="flex-1">
+            <Outlet />
+            </main>
             <Footer></Footer>
         </div>
     );

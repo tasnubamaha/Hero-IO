@@ -1,16 +1,16 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from '../pages/Root/Root'
-import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import Home from '../pages/Home/Home'
 import AllApps from '../pages/AllApps/AllApps'
 import AppDetails from '../pages/AppDetails/AppDetails'
 import MyInstallation from '../pages/MyInstallation/MyInstallation'
+import ErrorPage404 from '../pages/ErrorPage400/ErrorPage400'
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage404/>,
     children: [
       {
         index: true,
@@ -27,6 +27,11 @@ export const router = createBrowserRouter([
       {
         path: "installation",
         element: <MyInstallation />
+      },
+      
+      {
+        path: "*",
+        element: <ErrorPage404 />  
       }
     ],
   },
