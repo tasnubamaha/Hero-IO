@@ -124,7 +124,7 @@ const AppDetails = () => {
       <div className="mt-6">
         <h2 className="text-sm font-semibold mb-3">Description</h2>
 
-        <p className="text-sm text-gray-600 leading-relaxed">
+        <p className="text-sm text-gray-600 whitespace-pre-line leading-relaxed">
           {app.description}
         </p>
       </div>
