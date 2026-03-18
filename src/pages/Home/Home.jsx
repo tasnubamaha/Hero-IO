@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import apps from '../../app.json'
 import AppCard from '../../components/AppCard/AppCard';
 import Banner from '../../components/Banner/Banner';
 import { Link } from 'react-router';
+import Loader from '../../components/Loader/Loader';
+
 
 const Home = () => {
     const topApps = apps.slice(0,8);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 800);
+      }, []);
+
+  if (loading) return <Loader />;
+
+
     return (
         <div>
             <Banner></Banner>

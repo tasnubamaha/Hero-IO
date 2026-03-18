@@ -2,6 +2,7 @@ import React from 'react';
 import bannerImg from '../../assets/hero (1).png'
 import playstoreImg from '../../assets/playstore.png'
 import group from '../../assets/Group.png'
+import { Link } from 'react-router';
 
 const Banner = () => {
     return (
@@ -10,10 +11,10 @@ const Banner = () => {
             <p className='text-[#627382] text-center mt-8'>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.<br></br>Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
             <div className='flex gap-3 ml-130 mt-8'>
                 <div>
-                    <button className='btn bg-white text-[#627382] border-gray-300'><img src={playstoreImg} alt="" />Google Play</button>
+                    <Link to="https://play.google.com/store/games?hl=en"><button className='btn bg-white text-[#627382] border-gray-300'><img src={playstoreImg} alt="" />Google Play</button></Link>
                 </div>
                 <div>
-                    <button className='btn bg-white text-[#627382] border-gray-300'><img src={group} alt="" />App Store</button>
+                    <Link to="https://www.apple.com/app-store/"><button className='btn bg-white text-[#627382] border-gray-300'><img src={group} alt="" />App Store</button></Link>
                 </div>
             </div>
             <img className='w-150 mt-8 ml-90' src={bannerImg} alt="" />

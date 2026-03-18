@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.png'
 import github from '../../assets/Vector.png'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     const links = <>
@@ -34,7 +34,7 @@ const NavBar = () => {
       {links}
       </ul>
     </div>
-     <img className='w-15 h-15 ml-8 mt-3' src={logo} alt="" />
+    <Link to="/"><img className='w-15 h-15 ml-8 mt-3' src={logo} alt="" /></Link>
      <h2 className='text-[#6F41BE] font-bold mt-4'>HERO.IO</h2>
   </div>
   <div className="navbar-center hidden lg:flex">

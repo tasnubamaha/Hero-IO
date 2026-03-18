@@ -41,13 +41,11 @@ const AppDetails = () => {
 
   const handleInstall = () => {
   if (!installed) {
-    setInstalled(true);
-
     let installedApps = JSON.parse(localStorage.getItem("installed")) || [];
-
     if (!installedApps.includes(app.id)) {
       installedApps.push(app.id);
       localStorage.setItem("installed", JSON.stringify(installedApps));
+      setInstalled(true);
     }
 
     toast.success(`${app.title} installed successfully!`, {
@@ -92,7 +90,7 @@ const AppDetails = () => {
           <h1 className="text-xl font-bold text-black">{app.title}</h1>
           <p className="text-sm text-gray-500">
             Developed by{" "}
-            <span className="text-blue-600 font-medium">{app.companyName}</span>
+            <span className="text-purple-600 font-medium">{app.companyName}</span>
           </p>
 
           {/* STATS */}
@@ -122,7 +120,9 @@ const AppDetails = () => {
           <button
             onClick={handleInstall}
             disabled={installed}
-            className="mt-5 bg-green-500 text-white text-sm px-5 py-2 rounded"
+            className={`mt-5 text-sm px-5 py-2 rounded transition-all duration-300 ease-in-out ${
+            installed ? "bg-gray-400 cursor-not-allowed" : "bg-green-500 hover:bg-green-600 text-white"
+          }`}
           >
             {installed ? "Installed" : `Install Now (${app.size} MB)`}
           </button>
@@ -145,6 +145,13 @@ const AppDetails = () => {
             </div>
           ))}
         </div>
+         <div className="flex justify-between text-xs text-gray-400 mt-2 px-1">
+        <span>0</span>
+        <span>{Math.floor(maxRating * 0.25)}</span>
+        <span>{Math.floor(maxRating * 0.5)}</span>
+        <span>{Math.floor(maxRating * 0.75)}</span>
+        <span>{maxRating}</span>
+  </div>
       </div>
 
       {/* DESCRIPTION */}

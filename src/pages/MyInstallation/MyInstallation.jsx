@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import apps from "../../app.json";
 import downloadIcon from '../../assets/icon-downloads.png';
 import ratingsIcon from '../../assets/icon-ratings.png';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyInstallation = () => {
   const [sortAsc, setSortAsc] = useState(true);
@@ -27,16 +29,27 @@ const MyInstallation = () => {
   });
 
   // Remove app from installed list
-  const removeApp = (appToRemove) => {
-    const updatedApps = installedApps.filter((a) => a.id !== appToRemove.id);
-    setInstalledApps(updatedApps);
+   const removeApp = (appToRemove) => {
+  const updatedApps = installedApps.filter((a) => a.id !== appToRemove.id);
+  setInstalledApps(updatedApps);
 
-    // Update localStorage
-    let stored = JSON.parse(localStorage.getItem("installed")) || [];
-    stored = stored.filter((id) => id !== appToRemove.id);
-    localStorage.setItem("installed", JSON.stringify(stored));
-  };
+  let stored = JSON.parse(localStorage.getItem("installed")) || [];
+  stored = stored.filter((id) => id !== appToRemove.id);
+  localStorage.setItem("installed", JSON.stringify(stored));
 
+  toast.info(`${appToRemove.title} uninstalled successfully!`, {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      className: "bg-white shadow-lg border-l-4 border-red-500 rounded-xl",
+      bodyClassName: "text-gray-800 font-medium",
+      icon: "🗑️",
+    });
+  
+  }
   // Sort apps by size (toggle ascending/descending)
   const sortBySize = () => {
     const sorted = [...installedApps].sort((a, b) =>
@@ -113,6 +126,17 @@ const MyInstallation = () => {
           </div>
         ))}
       </div>
+       <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

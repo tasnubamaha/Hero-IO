@@ -16,7 +16,7 @@ const Footer = () => {
   </div>
  </div>
  <div>
-    <h4 className='mt-30'>Copyright © 2025 - All right reserved</h4>
+    <h4 className='mt-30'>© {new Date().getFullYear()} AppStore. All rights reserved.</h4>
  </div>
   <nav>
     <h6 className="footer-title">Social Links</h6>
