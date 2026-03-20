@@ -31,54 +31,55 @@ const AllApps = () => {
     }, 400);
   };
 
-  if (loading) return <Loader />;
+  if (loading) return <Loader fullScreen />;
 
   return (
-    <div className="max-w-6xl mx-auto mb-20 px-4">
+    <div className="max-w-7xl mx-auto mb-20 px-4">
 
-      {/* Header */}
-      <h1 className='text-black text-3xl text-center font-bold mt-8'>
+     
+      <h1 className='text-2xl text-black md:text-3xl text-center font-bold mt-8'>
         Our All Applications
       </h1>
-      <p className='text-gray-400 text-center mb-12 mt-6'>
-        Explore All Apps on the Market developed by us. We code for Millions
+
+      <p className='text-gray-400 text-center mb-10 mt-4 max-w-xl mx-auto'>
+        Explore all apps developed by us. We build for millions.
       </p>
 
-      {/* Top bar */}
-      <div className="flex flex-col md:flex-row justify-between items-center my-8 gap-4">
 
-        {/* Apps Found */}
-        <h1 className="text-2xl font-bold text-black">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 my-8">
+
+       
+        <h1 className="text-xl ml-14 md:text-2xl text-black font-bold">
           ({filteredApps.length}) Apps Found
         </h1>
 
-        {/* Search */}
-      <div className="relative w-full md:w-64 flex items-center border border-black rounded overflow-hidden mr-16">
-        {/* Search Icon */}
-        <div className="pl-2 pr-2 flex items-center">
-          <img src={searchImg} alt="search icon" className="w-5 h-5 text-gray-500" />
-        </div>
+       
+        <div className="relative w-full md:w-72 flex items-center border border-gray-300 rounded-lg overflow-hidden mr-20">
 
-        {/* Input */}
-        <input
-          type="text"
-          placeholder="Search app..."
-          className="flex-1 px-2 py-2 text-black focus:outline-none"
-          value={search}
-          onChange={(e) => handleSearch(e.target.value)}
-        />
-</div>
+          <div className="pl-3 pr-2 flex items-center">
+            <img src={searchImg} alt="search" className="w-5 h-5 opacity-60" />
+          </div>
+
+          <input
+            type="text"
+            placeholder="Search app..."
+            className="flex-1 px-2 py-2 text-black focus:outline-none"
+            value={search}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+        </div>
 
       </div>
 
+      
       {searchLoading ? (
         <Loader />
       ) : filteredApps.length === 0 ? (
         <p className="text-center text-gray-500 mt-10 text-lg">
-           No App Found
+          No App Found
         </p>
       ) : (
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-4 mt-6">
+        <div className="grid ml-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
           {filteredApps.map(app => (
             <AppCard key={app.id} app={app} />
           ))}

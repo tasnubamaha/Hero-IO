@@ -19,32 +19,27 @@ const AppCard = ({ app }) => {
 
   return (
     <Link to={`/apps/${app.id}`}>
-      <div className="bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition w-full max-w-50 ">
+      <div className="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition w-full max-w-90">
 
-        {/* IMAGE */}
-        <div className="bg-gray-200 pt-2 pb-2">
+        <div className="bg-gray-200 pt-8 pb-8">
           <img
           src={app.image}
           alt={app.title}
-          className="w-20 h-20 object-cover rounded-lg mb-3 ml-12 mt-4"
+          className="w-30 h-30 sm:w-24 sm:h-24 object-cover rounded-lg mb-8 ml-21 mt-8"
         />
         </div>
 
-        {/* TITLE */}
         <h3 className="text-sm font-semibold text-gray-800 mt-4 mb-2 truncate">
           {app.title}
         </h3>
 
-        {/* BOTTOM */}
         <div className="flex justify-between items-center text-xs">
 
-          {/* DOWNLOAD */}
-          <span className="bg-green-100 text-green-600 px-2 py-0.5 rounded">
+          <span className="bg-green-100 text-green-600 sm:text-sm px-2 py-0.5 rounded">
             {formatDownloads(app.downloads)}
           </span>
 
-          {/* RATING */}
-          <span className="bg-orange-100 text-orange-500 px-2 py-0.5 rounded flex items-center gap-1">
+          <span className="bg-orange-100 mb-6 text-orange-500 px-2 py-0.5 rounded flex items-center gap-1">
             ⭐ {app.ratingAvg}
           </span>
 

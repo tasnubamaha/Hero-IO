@@ -71,57 +71,67 @@ const AppDetails = () => {
   const maxRating = Math.max(...app.ratings.map(r => r.count));
 
   return (
-    <div className="max-w-5xl mx-auto py-10">
+    <div className="max-w-5xl mx-auto py-10 px-4">
 
-      {/* TOP SECTION */}
-      <div className="flex gap-6 items-center border-b pb-6">
+    
+      <div className="flex flex-col md:flex-row gap-6 items-center md:items-start border-b pb-6">
 
-        {/* ICON */}
-       <div className='bg-gray-200 pt-4 pb-4 pl-4 pr-4 rounded-xl'>
+        
+       <div className='bg-gray-200 p-4 rounded-xl'>
          <img
           src={app.image}
           alt={app.title}
-          className="w-28 h-28 object-contain"
+          className="w-24 h-24 md:w-28 md:h-28 object-contain"
         />
        </div>
 
-        {/* INFO */}
-        <div className="flex-1">
-          <h1 className="text-xl font-bold text-black">{app.title}</h1>
-          <p className="text-sm text-gray-500">
+       
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-xl md:text-2xl font-bold text-black">{app.title}</h1>
+          <p className="text-sm text-gray-500 mt-1">
             Developed by{" "}
             <span className="text-purple-600 font-medium">{app.companyName}</span>
           </p>
 
-          {/* STATS */}
-          <div className="flex items-center gap-12 mt-5">
-            <div className="text-center">
-              <img src={download} className='ml-2' alt="" />
-              <p className="text-xs text-gray-500 mt-3">Downloads</p>
-              <p className="font-semibold text-lg text-[#627382] mt-2">
-                {formatDownloads(app.downloads)}
-              </p>
-            </div>
+         
+        <div className="flex justify-start md:justify-start items-center gap-8 md:gap-12 mt-5">
 
-            <div className="text-center">
-              <img src={icons} className='ml-5' alt="" />
-              <p className="text-xs text-gray-500 mt-3">Average Ratings</p>
-              <p className="font-semibold text-lg text-[#627382] mt-2">{app.ratingAvg}</p>
-            </div>
-
-            <div className="text-center">
-              <img src={reviews} className='ml-5' alt="" />
-              <p className="text-xs text-gray-500 mt-3">Total Reviews</p>
-              <p className="font-semibold text-lg text-[#627382] mt-2">{(app.reviews / 1000).toFixed(0)}K</p>
-            </div>
+         
+          <div className="flex flex-col items-center">
+            <img src={download} className="w-6 h-6 mb-1" alt="" />
+            <p className="text-xs text-gray-400">Downloads</p>
+            <p className="font-bold text-lg text-gray-800 mt-1">
+              {formatDownloads(app.downloads)}
+            </p>
           </div>
 
-          {/* BUTTON */}
+          
+          <div className="flex flex-col items-center">
+            <img src={icons} className="w-6 h-6 mb-1" alt="" />
+            <p className="text-xs text-gray-400">Average Ratings</p>
+            <p className="font-bold text-lg text-gray-800 mt-1">
+              {app.ratingAvg}
+            </p>
+          </div>
+
+         
+          <div className="flex flex-col items-center">
+            <img src={reviews} className="w-6 h-6 mb-1" alt="" />
+            <p className="text-xs text-gray-400">Total Reviews</p>
+            <p className="font-bold text-lg text-gray-800 mt-1">
+              {(app.reviews / 1000).toFixed(0)}K
+            </p>
+          </div>
+
+        </div>
+         
           <button
             onClick={handleInstall}
             disabled={installed}
-            className={`mt-5 text-sm px-5 py-2 rounded transition-all duration-300 ease-in-out ${
-            installed ? "bg-gray-400 cursor-not-allowed" : "bg-green-500 hover:bg-green-600 text-white"
+            className={`mt-6 text-sm px-5 py-2 rounded transition ${
+          installed
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-green-500 hover:bg-green-600 text-white"
           }`}
           >
             {installed ? "Installed" : `Install Now (${app.size} MB)`}
@@ -129,13 +139,13 @@ const AppDetails = () => {
         </div>
       </div>
 
-      {/* RATINGS */}
+      
       <div className="mt-6 border-b pb-6">
-        <h2 className="text-xl font-bold text-black mb-4">Ratings</h2>
+        <h2 className="text-lg md:text-xl font-bold text-black mb-4">Ratings</h2>
         <div className="space-y-3">
           {app.ratings.slice().reverse().map((r, i) => (
             <div key={i} className="flex items-center gap-3">
-              <span className="w-12 text-xs text-gray-600">{r.name}</span>
+              <span className="w-10 text-xs text-gray-600">{r.name}</span>
               <div className="flex-1 h-3 bg-gray-200 rounded">
                 <div
                   className="h-3 bg-orange-500 rounded"
@@ -145,7 +155,7 @@ const AppDetails = () => {
             </div>
           ))}
         </div>
-         <div className="flex justify-between text-xs text-gray-400 mt-2 px-1">
+         <div className="flex justify-between text-xs text-gray-400 mt-2">
         <span>0</span>
         <span>{Math.floor(maxRating * 0.25)}</span>
         <span>{Math.floor(maxRating * 0.5)}</span>
@@ -154,10 +164,10 @@ const AppDetails = () => {
   </div>
       </div>
 
-      {/* DESCRIPTION */}
+     
       <div className="mt-6">
-        <h2 className="text-xl text-black font-bold mb-3">Description</h2>
-        <p className="text-sm text-gray-600 whitespace-pre-line leading-relaxed">
+        <h2 className="text-lg md:text-xl text-black font-bold mb-3">Description</h2>
+        <p className="text-sm md:text-base text-gray-600 whitespace-pre-line leading-relaxed">
           {app.description}
         </p>
       </div>

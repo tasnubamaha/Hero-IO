@@ -6,33 +6,39 @@ import linkedln from '../../assets/linkedln.png'
 
 const Footer = () => {
     return (
-        <footer className="footer sm:footer-horizontal bg-[#001931] text-neutral-content p-10">
- <div className='flex'>
-     <div>
-    <img className='w-15 h-15 ml-40' src={logo} alt="" />
-  </div>
-  <div>
-    <h2 className='mt-6'>HERO.IO</h2>
-  </div>
- </div>
- <div>
-    <h4 className='mt-30'>© {new Date().getFullYear()} AppStore. All rights reserved.</h4>
- </div>
-  <nav>
-    <h6 className="footer-title">Social Links</h6>
-    <div className="grid grid-flow-col gap-4">
-      <a>
-        <img src={thread} alt="" />
-      </a>
-      <a>
-        <img src={linkedln} alt="" />
-      </a>
-      <a>
-        <img src={fb} alt="" />
-      </a>
-    </div>
-  </nav>
-</footer>
+        <footer className="bg-[#001931] text-white py-10">
+            
+            <div className="max-w-7xl mx-auto px-4">
+
+                
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                    
+                    <div className="flex items-center gap-3">
+                        <img className='w-10 h-10' src={logo} alt="logo" />
+                        <h2 className='text-xl font-semibold'>HERO.IO</h2>
+                    </div>
+
+                   
+                    <div className="text-center md:text-right">
+                        <h6 className="font-semibold mb-2">Social Links</h6>
+                        <div className="flex justify-center md:justify-end gap-4">
+                            <img className="w-6 cursor-pointer" src={thread} alt="" />
+                            <img className="w-6 cursor-pointer" src={linkedln} alt="" />
+                            <img className="w-6 cursor-pointer" src={fb} alt="" />
+                        </div>
+                    </div>
+
+                </div>
+
+               
+                <div className="text-center mt-8 text-sm text-gray-400">
+                    © {new Date().getFullYear()} AppNest. All rights reserved.
+                </div>
+
+            </div>
+
+        </footer>
     );
 };
 

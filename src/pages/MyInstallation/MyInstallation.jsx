@@ -22,13 +22,12 @@ const MyInstallation = () => {
     return num.toString();
   }
 };
-  // Load installed apps from localStorage on first render
-  const [installedApps, setInstalledApps] = useState(() => {
+
+const [installedApps, setInstalledApps] = useState(() => {
     const installedIds = JSON.parse(localStorage.getItem("installed")) || [];
     return apps.filter(app => installedIds.includes(app.id));
   });
 
-  // Remove app from installed list
    const removeApp = (appToRemove) => {
   const updatedApps = installedApps.filter((a) => a.id !== appToRemove.id);
   setInstalledApps(updatedApps);
@@ -50,7 +49,7 @@ const MyInstallation = () => {
     });
   
   }
-  // Sort apps by size (toggle ascending/descending)
+
   const sortBySize = () => {
     const sorted = [...installedApps].sort((a, b) =>
       sortAsc ? a.size - b.size : b.size - a.size
@@ -60,63 +59,61 @@ const MyInstallation = () => {
   };
 
   if (installedApps.length === 0)
-    return <p className="text-center mt-10 text-gray-600 text-lg">No apps installed yet.</p>;
+    return <p className="text-center mt-10 text-gray-600 text-lg px-4">No apps installed yet.</p>;
 
   return (
-    <div className="max-w-5xl mx-auto py-10">
+    <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
 
-      <div>
-        <h1 className="text-black text-3xl font-bold text-center">Your Installed Apps</h1>
-        <p className="text-gray-500 mt-4 mb-12 text-center">Explore All Trending Apps on the Market developed by us</p>
+      <div className="text-center">
+        <h1 className="text-black text-3xl sm:text-4xl font-bold">Your Installed Apps</h1>
+        <p className="text-gray-500 mt-4 mb-12">Explore All Trending Apps on the Market developed by us</p>
       </div>
-      {/* Top bar with Sort + Apps Count */}
-      <div className="flex justify-between items-center mb-6">
+
+      <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center mb-6 gap-4">
         <p className="text-gray-700 font-medium">{installedApps.length} Apps Found</p>
         <button
           onClick={sortBySize}
-          className="bg-white btn border-gray-400 text-gray-400 px-4 py-2 rounded hover:bg-gray-600"
+          className="bg-white btn border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-300"
           title="Click to toggle sort order"
         >
           Sort by Size {sortAsc ? "▲" : "▼"}
         </button>
       </div>
-      {/* Sort Button */}
-
-      {/* Installed apps list */}
+     
       <div className="space-y-4">
         {installedApps.map((app) => (
           <div
             key={app.id}
-            className="border-2 border-gray-300 rounded-xl flex justify-between items-center p-4"
+            className="border-2 border-gray-300 rounded-xl flex flex-col sm:flex-row justify-between items-center p-4 gap-4 sm:gap-0"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 w-full sm:w-auto">
               <img
                 src={app.image}
                 alt={app.title}
-                className="h-12 w-12 object-contain rounded-xl"
+                className="h-16 w-16 object-contain rounded-xl"
               />
               <div className="flex flex-col">
                 <h1 className="text-black font-semibold">{app.title}</h1>
-                <div className="flex items-center gap-4 mt-1">
-                  {/* Downloads */}
-                  <div className="flex items-center gap-1">
+                <div className="flex flex-wrap items-center gap-4 mt-1 text-sm text-gray-600">
+                
+                  <div className="flex items-center gap-1 text-green-500">
                     <img src={downloadIcon} alt="Downloads" className="h-4 w-4" />
                     <p className="text-green-500 text-sm">{formatDownloads(app.downloads)}</p>
                   </div>
 
-                  {/* Ratings */}
+                 
                   <div className="flex items-center gap-1">
                     <img src={ratingsIcon} alt="Ratings" className="h-4 w-4" />
                     <p className="text-orange-400 text-sm">{app.ratingAvg}</p>
                   </div>
 
-                  {/* App Size */}
+                 
                   <p className="text-gray-600 text-sm">{app.size} MB</p>
                 </div>
               </div>
             </div>
 
-            {/* Uninstall Button */}
+           
             <button
               onClick={() => removeApp(app)}
               className="bg-green-500 hover:bg-green-800 text-white font-bold px-4 py-1 rounded"
