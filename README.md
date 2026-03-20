@@ -1,16 +1,37 @@
-# React + Vite
+** App Name: AppNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+** Description : 
+AppNest is a modern and user-friendly application that allows users to explore, search, and manage different apps in one place. Users can view app details, ratings, and install apps seamlessly with a clean and responsive interface.
+The application is designed with a focus on simplicity, performance, and a smooth user experience across all devices.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+** Features :
+    Search apps easily
+    Install / uninstall apps
+    View ratings and downloads
+    Fully responsive design
+    Fast and clean UI
+    Toast notifications for actions
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+** Technologies Used :
+    React.js
+    React Router
+    Tailwind CSS
+    JavaScript (ES6)
+    JSON (for app data)
+    React Toastify
 
-## Expanding the ESLint configuration
+** Project Structure :
+    Components (AppCard, Loader, Banner, Footer, NavBar)
+    Pages (AllApps, ErrorPage404, AppNotFound, Home, AppDetails, MyInstallation, Root)
+    Assets (Icons & Images)
+    Data (app.json)
+    Routes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+** Live Link : https://luminous-mochi-42f826.netlify.app/
+
+** Developer:  Tasnuba Razzak
+
+
+** License: This project is for educational purposes.
